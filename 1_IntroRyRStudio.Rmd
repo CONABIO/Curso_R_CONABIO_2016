@@ -1,8 +1,5 @@
 ---
 title: "1. Introducción a R y RStudio"
-author: "Alicia Mastretta-Yanes y Alex Ponce"
-date: "22 de agosto de 2016"
-output: html_document
 ---
 
 
@@ -107,100 +104,6 @@ Algunos _shortcuts_ útiles en RStudio son:
 * ctrl + 1: mover el cursor al editor  
 * ?+nombre de función: ayuda sobre esa función.
 
-
-### Introducción a R como lenguaje de programación
-
-##### Sintaxis y principales comandos
-
-Veamos la sintaxis básica de R y los principales comandos que aprender.  
-
-Un excelente tutorial para familiarizarse con los comandos de R es [TryR](http://tryr.codeschool.com/).
-
-* Expresiones matemáticas: `1+1`
-* Strings de texto: `"¡Holaaaaa mundo!"`
-* Valores lógicos: `1<5`, `2+2 ==5`
-* Crear una variable: `x<-5`
-
-* Funciones: son un comando que hace algo específico dentro de R. Ejemplo: `sum()`, `mean()`, `help()`
-
-**Ejercicio**: crea una variable con el logaritmo base 10 de 50 y súmalo a otra variable cuyo valor sea igual a 5.
-
-Vectores:
-* vectores `c(5, 4, 6, 7)`, `5:9`
-* Acceso a elementos de un vector: `[]` y poner dentro de los corchetes el número (posición) o rango de elementos del vector al que queremos acceder.
-
-**Ejercicio:** suma el número 2 a todos los números entre 1 y 150. 
-
-Matrices
-* Matrices `matrix(0, 3, 5)`
-* Acceso a elementos e una matriz `[ , ]` . Igual que para acceder a vectores, pero con filas, columnas.
-
-Data frames
-* Data frame `data.frame(x = c("a", "b", "c"), y = 1:3)`
-* Acceso a elementos e una data.frame `[ , ]`, `$`. Los corchetes se usan como filas,columnas, y el `$` como `nombredataframe$nombrecolumna`
-
-Para una versión un poco más amplia del anterior resumen veamos estas [notas sobre los tipos de objetos de R básico](Tipos_objetos_baseR.Rmd).
-
-* Funciones de sistema: `list.files`, `getwd`, `setwd`
-* Cargar una función: `source`
-* Instalar paquetes (sola una vez en cada equipo): `install.packages`.
-* Cargar un paquete previamente instalado (cada vez que corramos el script): `library`.
-* Cargar a R un archivo de texto con filas y columnas (separado por tabs o comas): `read.delim`.
-* "Pegar" texto uno detrás de otro: `paste()` y `paste0()`.
-
-
-##### "Working directory"
-
-
-Windows, Mac y las interfaces gráficas de Linux (como Ubuntu y Biolinux) tienen un sistema de archivos que estamos acostumbrados a explorar a través carpetas y subcarpetas que podemos ver en una ventana. R en cambio necesita de esas **rutas** en forma de texto. Las rutas pueden darse absolutas (desde C: o J:) o mejor aún **relativas** desde el **working directory** (WD) del script, lo cual lo hace repetible en cualquier computadora.
-
-El working directory es el directorio **dónde estamos**, equivalente a tener una ventana abierta del explorador en una carpeta determinada. Al menos que le indiques lo contrario, todo archivo que se genere como parte de la ejecución de R se guardará aquí. También este será el lugar donde R buscará los archivos que le pidas, y **NO** los encontrará si no están exactamente ahí. Claro que es posible decirle que busque en otro directorio, lo veremos adelante.  
-
-Para averiguar en qué directorio estamos usamos:
-
-* `getwd()`
-
-Lo más recomendable es que siempre **nuestro WD sea la carpeta donde está guardado el script en el que estamos trabajando**.
-
-Al abrir RStudio el working directory de base es la carpeta "home" del usuario de la computadora. 
-
-Pero, si en vez de abrir primero RStudio y luego abrir nuestro script, abrimos directamente nuestro script, entonces por default nuestro WD será el directorio donde está guardado dicho script. 
-
-Para cambiar de directorio:
-
-* `setwd()` 
-* "Session>Set Working Directory>To Source File Location" (lo cambia a la ruta del script donde estamos trabajando)
-
-
-##### "Cargar archivos a R"
-
-
-
-**Ejercicio:** Carga en R el archivo `/meta/maizteocintle_SNP50k_meta_extended.txt` y utiliza un script de R para responder lo siguiente:
-
-* ¿Qué tipo de objeto creamos al cargar la base?
-
-* ¿Cómo se ven las primeras 6 líneas del archivo?
-
-* ¿Cuántas muestras hay?
-
-* ¿De cuántos estados se tienen muestras?
-
-* ¿Cuántas muestras fueron colectadas antes de 1980?
-
-* ¿Cuántas muestras hay de cada raza?
-
-* En promedio ¿a qué altitud fueron colectadas las muestras?
-
-* ¿Y a qué altitud máxima y mínima fueron colectadas?
-
-* Crea una nueva df de datos sólo con las muestras de la raza Olotillo
-
-* Crea una nueva df de datos sólo con las muestras de la raza Reventador, Jala y Ancho
-
-* Escribe la matriz anterior a un archivo llamado "submat.cvs" en /meta.
-
-
 #### Cómo citar R 
 
 Citar R:
@@ -215,4 +118,3 @@ Citar un paquete en particular:
 citation("NombrePaquete")
 ```
 (o lo que loas autoreas especifiquen en su sitio web)
-
