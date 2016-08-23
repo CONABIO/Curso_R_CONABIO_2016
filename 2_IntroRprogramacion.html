@@ -107,15 +107,14 @@ $(document).ready(function () {
 <div class="fluid-row" id="header">
 
 
-<h1 class="title"><ol start="2" style="list-style-type: decimal">
-<li>Introducción a R como lenguaje de programación</li>
-</ol></h1>
 
 </div>
 
 
-<div id="sintaxis-y-principales-comandos" class="section level5">
-<h5>Sintaxis y principales comandos</h5>
+<div id="introduccion-a-r-como-lenguaje-de-programacion" class="section level1">
+<h1>“2. Introducción a R como lenguaje de programación”</h1>
+<div id="sintaxis-y-principales-comandos" class="section level3">
+<h3>Sintaxis y principales comandos</h3>
 <p>Veamos la sintaxis básica de R y los principales comandos que aprender.</p>
 <p>Un excelente tutorial para familiarizarse con los comandos de R es <a href="http://tryr.codeschool.com/">TryR</a>.</p>
 <ul>
@@ -126,23 +125,23 @@ $(document).ready(function () {
 <li><p>Funciones: son un comando que hace algo específico dentro de R. Ejemplo: <code>sum()</code>, <code>mean()</code>, <code>help()</code></p></li>
 </ul>
 <p><strong>Ejercicio</strong>: crea una variable con el logaritmo base 10 de 50 y súmalo a otra variable cuyo valor sea igual a 5.</p>
-<div id="vectores" class="section level6">
-<h6>Vectores:</h6>
+<div id="vectores" class="section level5">
+<h5>Vectores:</h5>
 <ul>
 <li>vectores <code>c(5, 4, 6, 7)</code>, <code>5:9</code></li>
 <li>Acceso a elementos de un vector: <code>[]</code> y poner dentro de los corchetes el número (posición) o rango de elementos del vector al que queremos acceder.</li>
 </ul>
 <p><strong>Ejercicio:</strong> suma el número 2 a todos los números entre 1 y 150.</p>
 </div>
-<div id="matrices" class="section level6">
-<h6>Matrices</h6>
+<div id="matrices" class="section level5">
+<h5>Matrices</h5>
 <ul>
 <li>Matrices <code>matrix(0, 3, 5)</code></li>
 <li>Acceso a elementos e una matriz <code>[ , ]</code> . Igual que para acceder a vectores, pero con filas, columnas.</li>
 </ul>
 </div>
-<div id="data-frames" class="section level6">
-<h6>Data frames</h6>
+<div id="data-frames" class="section level5">
+<h5>Data frames</h5>
 <ul>
 <li>Data frame <code>data.frame(x = c(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;), y = 1:3)</code></li>
 <li>Acceso a elementos e una data.frame <code>[ , ]</code>, <code>$</code>. Los corchetes se usan como filas,columnas, y el <code>$</code> como <code>nombredataframe$nombrecolumna</code></li>
@@ -158,8 +157,8 @@ $(document).ready(function () {
 </ul>
 </div>
 </div>
-<div id="working-directory" class="section level5">
-<h5>Working directory</h5>
+<div id="working-directory" class="section level3">
+<h3>Working directory</h3>
 <p>Windows, Mac y las interfaces gráficas de Linux (como Ubuntu y Biolinux) tienen un sistema de archivos que estamos acostumbrados a explorar a través carpetas y subcarpetas que podemos ver en una ventana. R en cambio necesita de esas <strong>rutas</strong> en forma de texto. Las rutas pueden darse absolutas (desde C: o J:) o mejor aún <strong>relativas</strong> desde el <strong>working directory</strong> (WD) del script, lo cual lo hace repetible en cualquier computadora.</p>
 <p>El working directory es el directorio <strong>dónde estamos</strong>, equivalente a tener una ventana abierta del explorador en una carpeta determinada. Al menos que le indiques lo contrario, todo archivo que se genere como parte de la ejecución de R se guardará aquí. También este será el lugar donde R buscará los archivos que le pidas, y <strong>NO</strong> los encontrará si no están exactamente ahí. Claro que es posible decirle que busque en otro directorio, lo veremos adelante.</p>
 <p>Para averiguar en qué directorio estamos usamos:</p>
@@ -175,8 +174,8 @@ $(document).ready(function () {
 <li>“Session&gt;Set Working Directory&gt;To Source File Location” (lo cambia a la ruta del script donde estamos trabajando)</li>
 </ul>
 </div>
-<div id="cargar-archivos-a-r" class="section level5">
-<h5>“Cargar archivos a R”</h5>
+<div id="cargar-archivos-a-r" class="section level3">
+<h3>“Cargar archivos a R”</h3>
 <p><strong>Ejercicio:</strong> Carga en R el archivo <code>/meta/maizteocintle_SNP50k_meta_extended.txt</code> y utiliza un script de R para responder lo siguiente:</p>
 <ul>
 <li><p>¿Qué tipo de objeto creamos al cargar la base?</p></li>
@@ -191,6 +190,7 @@ $(document).ready(function () {
 <li><p>Crea una nueva df de datos sólo con las muestras de la raza Reventador, Jala y Ancho</p></li>
 <li><p>Escribe la matriz anterior a un archivo llamado “submat.cvs” en /meta.</p></li>
 </ul>
+</div>
 </div>
 
 

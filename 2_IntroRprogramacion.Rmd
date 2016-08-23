@@ -1,8 +1,7 @@
----
-title: "2. Introducción a R como lenguaje de programación"
----
+# "2. Introducción a R como lenguaje de programación"
 
-##### Sintaxis y principales comandos
+
+### Sintaxis y principales comandos
 
 Veamos la sintaxis básica de R y los principales comandos que aprender.  
 
@@ -17,17 +16,17 @@ Un excelente tutorial para familiarizarse con los comandos de R es [TryR](http:/
 
 **Ejercicio**: crea una variable con el logaritmo base 10 de 50 y súmalo a otra variable cuyo valor sea igual a 5.
 
-###### Vectores:
+##### Vectores:
 * vectores `c(5, 4, 6, 7)`, `5:9`
 * Acceso a elementos de un vector: `[]` y poner dentro de los corchetes el número (posición) o rango de elementos del vector al que queremos acceder.
 
 **Ejercicio:** suma el número 2 a todos los números entre 1 y 150. 
 
-######Matrices
+##### Matrices
 * Matrices `matrix(0, 3, 5)`
 * Acceso a elementos e una matriz `[ , ]` . Igual que para acceder a vectores, pero con filas, columnas.
 
-######Data frames
+##### Data frames
 * Data frame `data.frame(x = c("a", "b", "c"), y = 1:3)`
 * Acceso a elementos e una data.frame `[ , ]`, `$`. Los corchetes se usan como filas,columnas, y el `$` como `nombredataframe$nombrecolumna`
 
@@ -41,7 +40,7 @@ Para una versión un poco más amplia del anterior resumen veamos estas [notas s
 * "Pegar" texto uno detrás de otro: `paste()` y `paste0()`.
 
 
-##### Working directory
+### Working directory
 
 
 Windows, Mac y las interfaces gráficas de Linux (como Ubuntu y Biolinux) tienen un sistema de archivos que estamos acostumbrados a explorar a través carpetas y subcarpetas que podemos ver en una ventana. R en cambio necesita de esas **rutas** en forma de texto. Las rutas pueden darse absolutas (desde C: o J:) o mejor aún **relativas** desde el **working directory** (WD) del script, lo cual lo hace repetible en cualquier computadora.
@@ -64,7 +63,7 @@ Para cambiar de directorio:
 * "Session>Set Working Directory>To Source File Location" (lo cambia a la ruta del script donde estamos trabajando)
 
 
-##### "Cargar archivos a R"
+### "Cargar archivos a R"
 
 
 
