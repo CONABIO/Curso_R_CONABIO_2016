@@ -1,15 +1,16 @@
 # Curso de R en CONABIO 2016
 
-
-
 ### Profesores
-Alicia Mastretta-Yanes
-Alejandro Ponce 
+Alicia Mastretta-Yanes y Alejandro Ponce 
+
+### Repositorio de notas
+[https://github.com/CONABIO/Curso_R_CONABIO_2016](https://github.com/CONABIO/Curso_R_CONABIO_2016)
 
 
 ### Objetivo
 
-Que los participantes adquieran los conocimientos básicos de R y apliquen este lenguaje para analizar datos de la CONABIO en temas de agrobiodiversidad.
+Que los participantes adquieran los conocimientos básicos de R y apliquen este lenguaje para analizar datos sobre agrobiodiversidad de proyectos de la CONABIO.
+
 
 ### Dinámica de clase
 
@@ -20,4 +21,10 @@ Que los participantes adquieran los conocimientos básicos de R y apliquen este 
 
 ### Temario
 
-* 
+* [Introducción a R y RStudio](1_IntroRyRStudio.Rmd) 
+* [Introducción a R como lenguaje de programación](2_IntroRprogramacion.Rmd)
+* Github
+* Paquetes, funciones y funciones propias
+* Automatización y repetición (for loops) 
+* Limpieza y manipulación de datos
+* Graficar en R 
