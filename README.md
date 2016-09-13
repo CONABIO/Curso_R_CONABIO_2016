@@ -23,8 +23,8 @@ Que los participantes adquieran los conocimientos básicos de R y apliquen este 
 
 * [Introducción a R y RStudio](1_IntroRyRStudio.Rmd) 
 * [Introducción a R como lenguaje de programación](2_IntroRprogramacion.Rmd)
+* [Limpieza y manipulación de datos](3_Limpieza_de_datos.Rmd)
 * Github
 * Paquetes, funciones y funciones propias
 * Automatización y repetición (for loops) 
-* Limpieza y manipulación de datos
 * Graficar en R 
