@@ -1,0 +1,119 @@
+# Regular expressions y búsqueda de patrones (`grep`)
+
+### ¿Qué son las expresiones regulares
+Las *expresiones regulares* son una herramienta de búsqueda o búsqueda-remplazo de cadenas de texto acorde a un patrón dado. Existen en R pero también en otros lenguajes de programación (con igual o casi igual sintaxis) y casi cualquier buscador de texto.
+
+Una expresión regular se puede pensar como una combinación de caracteres literales y metacaracteres. 
+
+* Los **caracteres literales** son de los que están formadas las **palabras en el lenguaje utilizado**. Ejemplo: "c",""o","n","a","b","i","o","2","0","6"
+
+* Los **metacaracteres** son aquellos que tienen una **función particular en la expresión regular**. Ejemplo:  "*","?",".","|","^","$","(",")","[","]"
+
+Las expresiones regulares también se conocen como *regexp*, *regex* o `grep` (global regular expression print), que es el comando que utilizaremos. Pero en realidad `grep` solo es uno de los comandos que las utiliza, es decir hay otros. 
+
+### ¿Para qué sirven? 
+
+Las principales aplicaciones de las expresiones regulares en bioinformática son:
+
+* Corregir errores en grandes bases de datos.
+* Ver datos de ciertas muestras.
+* Reformatear archivos de datos.
+* Decirle a un algoritmo que realice análisis en ciertas muestras y no otras
+
+Utilidad alternativa:
+
+![regular_expressions_xkcd.png](regular_expressions_xkcd.png)
+
+### ¿Cómo utilizar expresiones regulares en la línea de comando?
+
+El comando `grep` busca dentro de un objeto o vector las líneas que contengan una expresión regular dada y copia dicha línea al stdout (o hace algo con ese output, si se lo indicamos).
+
+```{r}
+## leer base de datos
+teodb<-read.delim("meta/BaseMaicesNativos-teocintles.txt")
+levels(teodb$Taxa)
+
+#método de búsqueda básico
+sum(teodb$Taxa=="Zea perennis")
+sum(teodb$Taxa=="Zea mexicana")
+
+#buscar Zea mays mexicana
+grep("mexicana", teodb$Taxa)
+length(grep("mexicana", teodb$Taxa))
+
+```
+
+
+La *regularexpression* puede ser tal cual el texto a buscar, pero también podemos hacer una búsqueda mucho más compleja con **operadores**, **cuantificadores**, y **posicionadores**, que nos permiten realizar búsquedas más flexibles. 
+
+Checa este acordeón para escribir [expresiones regulares](Expresiones_regulares.md).
+
+En R no sólo existe `grep` sino varias funciones similares.
+
+#### grep, grepl
+
+Las funciones grep y grepl, buscan las coincidencias del patrón (expresión regular), que se da como argumento. La función grep regresa los indices donde existió una coincidencia, la función grepl regresa una lista booleana donde las entradas son TRUE, cuando existe una coincidencia, FALSE cuando no hay tal.
+
+
+```{r}
+grep("mexicana", teodb$Taxa)
+grepl("mexicana", teodb$Taxa)
+```
+
+
+Usando la función grep podemos obtener el número de teocintles mexicana de nuestro dataset sin importar la raza:
+
+```{r}
+length(grep("mexicana", teodb$Taxa))
+length(grep("mexicana raza Chalco", teodb$Taxa))
+```
+
+Veamos que pasa si cambiamos el patrón de búsqueda:
+
+```{r}
+length(grep("[Mm]exicana", teodb$Taxa))
+```
+
+¿Como obtenemos las diferencias entre ambos resultados?
+
+```{r}
+i <- grep("[Mm]exicana", teodb$Taxa)
+j <- grep("mexicana", teodb$Taxa)
+str(i)
+str(j)
+setdiff(i, j)
+setdiff(j, i)
+```
+
+
+Podemos cambiar el índice por el valor encontrado
+```{r}
+head(teodb$Localidad)
+grep("1 [Kk]m antes", teodb$Localidad)
+grep("1 [Kk]m antes", teodb$Localidad, value=TRUE)
+
+````
+
+
+Ejercicio: Utiliza `^ < >` para selecionar la palabra *la* dentro de Localidades.
+
+
+```{r, eval=FALSE}
+x <- teodb$Localidad[grep("^[Ll]a", teodb$Localidad)]
+x
+
+x <- teodb$Localidad[grep("\\<la\\>", teodb$Localidad)]
+x
+```
+
+
+#### sub, gsub
+
+La función `sub` substituye la primera coincidencia del patrón de interés por la cadena indicada (primera dentro de cada "línea" de una df, no dentro de toda). `gsub` substituye todas las ocurrencias del patrón en vez de únicamente la primera.
+
+```{r}
+x <- teodb$Localidad[grep("\\<[Ll]a\\>", teodb$Localidad)]
+x
+sub("La", "km", x)
+gsub("La", "km", x)
+```
