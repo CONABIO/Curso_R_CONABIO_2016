@@ -114,6 +114,6 @@ La función `sub` substituye la primera coincidencia del patrón de interés por
 ```{r}
 x <- teodb$Localidad[grep("\\<[Ll]a\\>", teodb$Localidad)]
 x
-sub("La", "km", x)
-gsub("La", "km", x)
+sub("La", "la", x)
+gsub("La", "la", x)
 ```
